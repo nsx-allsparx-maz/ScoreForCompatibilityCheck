@@ -1,8 +1,17 @@
 
-openapi: 3.0.1
+openapi: 3.0.2
 info:
   title: User Service
   version: 1.0.0
+  termsOfService: https://example.com/terms/
+  contact:
+    name: API Support
+    url: https://www.example.com/support
+    email: support@example.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.1
 paths:
   /users:
     post:
@@ -13,6 +22,8 @@ paths:
               properties:
                 name:
                   type: string
+              required:
+                - name
               type: object
         required: true
       responses:
@@ -27,43 +38,23 @@ paths:
                 required:
                   - id
                 type: object
-  /users/{userId}:
-    get:
-      parameters:
-        - name: userId
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: The user
-          content:
-            application/json:
-              schema:
-                properties:
-                  name:
-                    type: string
-                required:
-                  - name
-                type: object
 security:
-  - user_auth:
-    - write:users
-    - read:pets
   - customer_auth:
     - write:customer
-    - read:customer
+    - read:users
+  - petstore_auth:
+    - write:pets
+    - read:pets
 servers:
-- url: https://staging.gigantic-server.com/v1
-  description: Staging server
+- url: https://development.gigantic-server.com/v1
+  description: Development server
 - url: https://api.gigantic-server.com/v1
-  description: Production server
+  description: Production UAT
 tags:
-  - name: users
-    description: User operations
+  - name: pet
+    description: Pets operations
   - name: customer
-    description: Customer operations
+    description: customer
 externalDocs:
   description: Find more info here
-  url: https://vdcghvhe.com
+  url: https://example.com

@@ -4,13 +4,13 @@ info:
   title: User Service
   termsOfService: https://example.com/terms/
   contact:
-    name: API Support
+    name: API Support-v1
     url: https://www.example.com/support
     email: support@example.com
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.2
+  version: 1.0.5
 paths:
   /users:
     post:
@@ -41,7 +41,7 @@ security:
   - customer_auth:
     - write:customer
     - read:users
-  - petstore_h:
+  - petstore_authh:
     - write:pets
     - read:pets
 servers:
@@ -52,6 +52,8 @@ servers:
 tags:
   - name: pet
     description: Pets operations
+  - name: petFlow
+    description: Pets
 externalDocs:
   description: Find more info here
   url: https://exle.com

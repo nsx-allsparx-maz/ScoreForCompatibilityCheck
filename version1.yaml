@@ -1,10 +1,10 @@
 
-openapi: 3.0.1
+openapi: 3.0.2
 info:
   title: User Service
   termsOfService: https://example.com/terms/
   contact:
-    name: API Support-1
+    name: API Support
     url: https://www.example.com/support
     email: support@example.com
   license:
@@ -41,7 +41,7 @@ security:
   - customer_auth:
     - write:customer
     - read:users
-  - petstore_auth:
+  - petstore_h:
     - write:pets
     - read:pets
 servers:
@@ -52,8 +52,6 @@ servers:
 tags:
   - name: pet
     description: Pets operations
-  - name: customer
-    description: customer
 externalDocs:
   description: Find more info here
-  url: https://example.com
+  url: https://exle.com

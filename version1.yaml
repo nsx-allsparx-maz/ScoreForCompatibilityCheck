@@ -4,13 +4,13 @@ info:
   title: User Service
   termsOfService: https://example.com/terms/
   contact:
-    name: API Support-v1
+    name: API Support-v2
     url: https://www.example.com/support
-    email: support@example.com
+    email: support@exle.com
   license:
-    name: Apache 2.0
+    name: Apache 8.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.5
+  version: 1.0.6
 paths:
   /users:
     post:
@@ -41,14 +41,13 @@ security:
   - customer_auth:
     - write:customer
     - read:users
-  - petstore_authh:
-    - write:pets
-    - read:pets
 servers:
 - url: https://development.gigantic-server.com/v1
   description: Development server
 - url: https://api.gigantic-server.com/v1
   description: Production UAT
+- url: https://api.gigar.com/v1
+  description: Producti
 tags:
   - name: pet
     description: Pets operations

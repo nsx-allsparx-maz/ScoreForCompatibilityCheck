@@ -1,7 +1,7 @@
 
 openapi: 3.0.1
 info:
-  title: User Service
+  title: User Service - v2
   termsOfService: https://example.com/terms/
   contact:
     name: API Support
@@ -10,7 +10,7 @@ info:
   license:
     name: Apache 8.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.0
+  version: 1.0.1
 paths:
   /users:
     post:
@@ -24,7 +24,7 @@ paths:
               required:
                 - name
               type: object
-        required: false
+        required: true
       responses:
         201:
           description: Created
@@ -46,8 +46,6 @@ servers:
   description: Development server
 - url: https://gigantic-server.com/v1
   description: Production server
-- url: https://api.gigantic-server-uat.com/v1
-  description: Production UAT
 tags:
   - name: pet
     description: Pets operations

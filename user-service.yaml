@@ -1,18 +1,18 @@
 
 openapi: 3.0.1
 info:
-  title: User Service - v2
+  title: User Service - v3
   termsOfService: https://example.com/terms/
   contact:
-    name: API Support
-    url: https://www.example.com/support
-    email: support@exle.com
+    name: API Support Team
+    url: https://www.test.com/support
+    email: support@test.com
   license:
     name: Apache 8.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.1
+  version: 1.0.2
 paths:
-  /users:
+  /users/{userId}:
     post:
       requestBody:
         content:
@@ -24,7 +24,7 @@ paths:
               required:
                 - name
               type: object
-        required: true
+        required: false
       responses:
         201:
           description: Created
@@ -46,6 +46,8 @@ servers:
   description: Development server
 - url: https://gigantic-server.com/v1
   description: Production server
+- url: https://gigantic-server-uat.com/v1
+  description: UAT server
 tags:
   - name: pet
     description: Pets operations
@@ -53,4 +55,4 @@ tags:
     description: Pets
 externalDocs:
   description: Find more info here
-  url: https://exle.com
+  url: https://test.com
